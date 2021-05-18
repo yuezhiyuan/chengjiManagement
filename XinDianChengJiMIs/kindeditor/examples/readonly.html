@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Readonly Examples</title>
+		<style>
+			form {
+				margin: 0;
+			}
+			textarea {
+				display: block;
+			}
+		</style>
+		<link rel="stylesheet" href="../themes/default/default.css" />
+		<script charset="utf-8" src="../kindeditor-min.js"></script>
+		<script charset="utf-8" src="../lang/zh_CN.js"></script>
+		<script>
+			KindEditor.ready(function(K) {
+				var editor = K.create('textarea[name="content"]', {
+					readonlyMode : true
+				});
+				// 设置成只读状�?
+				K('input[name=readonly]').click(function() {
+					editor.readonly();
+				});
+				// 取消只读状�?
+				K('input[name=cancel]').click(function() {
+					editor.readonly(false);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h3>只读模式</h3>
+		<form>
+			<textarea name="content" style="width:800px;height:200px;"></textarea>
+			<p>
+				<input type="button" name="readonly" value="设置成只读状�? />
+				<input type="button" name="cancel" value="取消只读状�? />
+			</p>
+		</form>
+	</body>
+</html>
